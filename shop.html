@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shop | DIGI JEWELRY STORE</title>
+
+<meta
+name="description"
+content="Shop premium luxury watches from DIGI JEWELRY STORE. Rolex, Cartier, AP, Omega and more.">
+<meta property="og:title" content="DIGI JEWELRY STORE">
+<meta property="og:description" content="Premium luxury watches from DIGI JEWELRY STORE. Rolex, Cartier, AP, Omega and more.">
+<meta property="og:image" content="images/digilogo.jpg">
+
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================================
+GLOBAL
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#020817;
+    color:white;
+    overflow-x:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+}
+
+h1,h2,h3,h4{
+    font-family:'Montserrat',sans-serif;
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+header{
+    width:100%;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    background:#041229;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    height:52px;
+}
+
+.logo h2{
+    font-size:28px;
+    color:#0ea5e9;
+}
+
+.logo span{
+    color:#f59e0b;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#f59e0b;
+}
+
+.order-btn{
+    background:#f59e0b;
+    color:white;
+    padding:14px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.order-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================================
+SHOP HERO
+========================================= */
+
+.shop-hero{
+    position:relative;
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(
+    rgba(2,8,23,0.85),
+    rgba(2,8,23,0.88)
+    ),
+    url('images/rolex (3).jpg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.shop-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at right,
+    rgba(245,158,11,0.18),
+    transparent 40%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-small{
+    color:#f59e0b;
+    letter-spacing:2px;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.hero-content h1{
+    font-size:clamp(55px,8vw,95px);
+    line-height:1;
+    margin-bottom:25px;
+}
+
+.hero-text{
+    max-width:700px;
+    color:#cbd5e1;
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* =========================================
+SHOP SECTION
+========================================= */
+
+.shop-section{
+    padding:110px 0;
+}
+
+/* TOP BAR */
+
+.shop-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-bottom:50px;
+}
+
+.shop-title p{
+    color:#f59e0b;
+    margin-bottom:12px;
+}
+
+.shop-title h2{
+    font-size:50px;
+}
+
+.search-box{
+    width:350px;
+    height:60px;
+
+    background:#071526;
+    border:1px solid rgba(255,255,255,0.08);
+
+    display:flex;
+    align-items:center;
+
+    padding:0 20px;
+    border-radius:16px;
+}
+
+.search-box i{
+    color:#94a3b8;
+    margin-right:12px;
+}
+
+.search-box input{
+    width:100%;
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+    font-size:15px;
+}
+
+/* =========================================
+FILTERS
+========================================= */
+
+.brand-filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:60px;
+}
+
+.filter-btn{
+    border:none;
+    background:#071526;
+    color:white;
+
+    padding:14px 24px;
+
+    border-radius:12px;
+    cursor:pointer;
+
+    transition:0.3s;
+    font-weight:600;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#f59e0b;
+}
+
+/* =========================================
+PRODUCTS GRID
+========================================= */
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+/* =========================================
+PRODUCT CARD
+========================================= */
+
+.product-card{
+    background:linear-gradient(180deg,#08182f,#06111f);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    transition:0.4s;
+
+    position:relative;
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 70px rgba(0,0,0,0.35);
+}
+
+.product-image-box{
+    position:relative;
+    overflow:hidden;
+}
+
+.product-image{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.product-card:hover .product-image{
+    transform:scale(1.08);
+}
+
+.product-overlay{
+    position:absolute;
+    inset:0;
+
+    background:rgba(2,8,23,0.55);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+    transition:0.4s;
+}
+
+.product-card:hover .product-overlay{
+    opacity:1;
+}
+
+.quick-btn{
+    background:#f59e0b;
+    color:white;
+
+    padding:14px 24px;
+
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.product-content{
+    padding:28px;
+}
+
+.product-brand{
+    color:#f59e0b;
+    font-size:14px;
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.product-content h3{
+    font-size:30px;
+    margin-bottom:14px;
+}
+
+.product-content p{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:24px;
+}
+
+.product-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.price{
+    font-size:34px;
+    color:#f59e0b;
+    font-weight:700;
+}
+
+.cart-btn{
+    width:54px;
+    height:54px;
+
+    border-radius:14px;
+
+    background:#22c55e;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.cart-btn:hover{
+    transform:scale(1.08);
+}
+
+/* =========================================
+EMPTY STATES
+========================================= */
+
+.loading-state,
+.empty-state{
+    text-align:center;
+    padding:100px 20px;
+    color:#94a3b8;
+    font-size:18px;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer{
+    padding:35px 0;
+    background:#010611;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.footer-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.footer-logo img{
+    height:45px;
+}
+
+.footer-logo h3{
+    color:#0ea5e9;
+}
+
+.footer-logo span{
+    color:#f59e0b;
+}
+
+.footer-text{
+    color:#94a3b8;
+}
+
+.socials{
+    display:flex;
+    gap:15px;
+}
+
+.socials a{
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    background:#071526;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.socials a:hover{
+    background:#f59e0b;
+    transform:translateY(-4px);
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:991px){
+
+    .navbar{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .shop-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .hero-content h1{
+        font-size:58px;
+    }
+
+    .shop-title h2{
+        font-size:38px;
+    }
+
+    .search-box{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================
+HEADER
+========================================= -->
+
+<header>
+
+<div class="container navbar">
+
+<div class="logo">
+
+<img src="images/digilogo.jpg" alt="DIGI Logo">
+
+<h2>DIGI <span>JEWELRY STORE</span></h2>
+
+</div>
+
+<div class="nav-links">
+
+        <a href="digi.html">HOME</a>
+
+        <a href="shop.html" class="active">SHOP</a>
+
+        <a href="about.html">ABOUT US </a>
+
+        <a href="contact.html">CONTACT</a>
+
+    </div>
+
+<a href="https://wa.me/2347053364320"
+class="order-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+ORDER NOW
+
+</a>
+
+</div>
+
+</header>
+
+<!-- =========================================
+HERO
+========================================= -->
+
+<section class="shop-hero">
+
+<div class="container hero-content">
+
+<p class="hero-small">
+PREMIUM COLLECTION
+</p>
+
+<h1>
+Luxury Watches <br>
+Crafted For Class.
+</h1>
+
+<p class="hero-text">
+Explore premium wristwatches from world-class luxury brands designed for elegance, prestige and timeless fashion.
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================================
+SHOP SECTION
+========================================= -->
+
+<section class="shop-section">
+
+<div class="container">
+
+<!-- TOP BAR -->
+
+<div class="shop-top">
+
+<div class="shop-title">
+
+<p>OUR COLLECTIONS</p>
+
+<h2>Explore Premium Brands</h2>
+
+</div>
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search luxury watches..."
+id="searchInput">
+
+</div>
+
+</div>
+
+<!-- FILTERS -->
+
+<div class="brand-filters">
+
+<button class="filter-btn active"
+data-brand="all">
+
+ALL
+
+</button>
+
+<button class="filter-btn"
+data-brand="Rolex">
+
+ROLEX
+
+</button>
+
+<button class="filter-btn"
+data-brand="Patek Philippe">
+
+PATEK PHILIPPE
+
+</button>
+
+<button class="filter-btn"
+data-brand="Cartier">
+
+CARTIER
+
+</button>
+
+<button class="filter-btn"
+data-brand="Omega">
+
+OMEGA
+
+</button>
+
+<button class="filter-btn"
+data-brand="Hublot">
+
+HUBLOT
+
+</button>
+
+<button class="filter-btn"
+data-brand="AP">
+
+AP
+
+</button>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<div id="productsContainer"
+class="products-grid">
+
+<div class="loading-state">
+Loading luxury watches...
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+FOOTER
+========================================= -->
+
+<footer>
+
+<div class="container footer-content">
+
+<div class="footer-logo">
+
+<img src="images/digilogo.jpg" alt="DIGI Logo">
+
+<h3>DIGI JEWELRY <span>STORE</span></h3>
+
+</div>
+
+<div class="footer-text">
+
+© 2026 DIGI JEWELRY STORE.
+All Rights Reserved.
+
+</div>
+
+<div class="socials">
+
+<a href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- =========================================
+FIREBASE SHOP SYSTEM
+========================================= -->
+
+<script type="module">
+
+// =========================================
+// IMPORT FIREBASE
+// =========================================
+
+import { db }
+from "./js/firebase.js";
+
+import {
+collection,
+getDocs,
+query,
+orderBy
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// =========================================
+// ELEMENTS
+// =========================================
+
+const productsContainer =
+document.getElementById("productsContainer");
+
+const filterBtns =
+document.querySelectorAll(".filter-btn");
+
+const searchInput =
+document.getElementById("searchInput");
+
+
+// =========================================
+// PRODUCTS ARRAY
+// =========================================
+
+let allProducts = [];
+
+let currentBrand = "all";
+
+
+// =========================================
+// FETCH PRODUCTS
+// =========================================
+
+async function fetchProducts(){
+
+productsContainer.innerHTML = `
+
+<div class="loading-state">
+Loading luxury watches...
+</div>
+
+`;
+
+try{
+
+const q = query(
+collection(db,"products"),
+orderBy("createdAt","desc"));
+const querySnapshot = await getDocs(q);
+
+allProducts = [];
+
+querySnapshot.forEach((doc)=>{
+
+allProducts.push({
+
+id:doc.id,
+
+...doc.data()
+
+});
+
+});
+
+renderProducts(allProducts);
+
+}catch(error){
+
+console.log(error);
+
+productsContainer.innerHTML = `
+
+<div class="empty-state">
+Failed to load products.
+</div>
+
+`;
+
+}
+
+}
+
+
+// =========================================
+// RENDER PRODUCTS
+// =========================================
+
+function renderProducts(products){
+
+productsContainer.innerHTML = "";
+
+if(products.length === 0){
+
+productsContainer.innerHTML = `
+
+<div class="empty-state">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+No products found.
+</div>
+
+`;
+
+return;
+
+}
+
+products.forEach((product)=>{
+
+productsContainer.innerHTML += `
+
+<div class="product-card">
+
+<div class="product-image-box">
+
+<img
+src="${product.images[0]}"
+class="product-image"
+loading="lazy"
+alt="${product.name}"
+onerror="this.src='images/placeholder.jpg'">
+
+<div class="product-overlay">
+
+<a
+href="product.html?id=${product.id}"
+class="quick-btn">
+
+VIEW PRODUCT
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-content">
+
+<div class="product-brand">
+
+${product.brand}
+
+</div>
+
+<h3>
+
+${product.name}
+
+</h3>
+
+<p>
+
+${product.description.substring(0,90)}...
+
+</p>
+
+<div class="product-bottom">
+
+<div class="price">
+
+₦${Number(product.price).toLocaleString()}
+
+</div>
+
+<a
+href="https://wa.me/2347053364320?text=Hello I want to order the ${product.name} wristwatch for ₦${Number(product.price).toLocaleString()}"
+target="_blank"
+class="cart-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+// =========================================
+// FILTER PRODUCTS
+// =========================================
+
+filterBtns.forEach((btn)=>{
+
+btn.addEventListener("click", ()=>{
+
+document
+.querySelector(".filter-btn.active")
+.classList.remove("active");
+
+btn.classList.add("active");
+
+currentBrand = btn.dataset.brand;
+
+filterProducts();
+
+});
+
+});
+
+
+// =========================================
+// SEARCH PRODUCTS
+// =========================================
+
+searchInput.addEventListener("input", ()=>{
+
+filterProducts();
+
+});
+
+
+// =========================================
+// FILTER FUNCTION
+// =========================================
+
+function filterProducts(){
+
+const searchTerm =
+searchInput.value.toLowerCase();
+
+let filtered = allProducts.filter((product)=>{
+
+const matchesBrand =
+
+currentBrand === "all"
+||
+product.brand.toLowerCase()
+=== currentBrand.toLowerCase();
+
+const matchesSearch =
+
+product.name.toLowerCase()
+.includes(searchTerm)
+
+||
+product.brand.toLowerCase()
+.includes(searchTerm);
+
+return matchesBrand && matchesSearch;
+
+});
+
+renderProducts(filtered);
+
+}
+
+
+// =========================================
+// INITIAL LOAD
+// =========================================
+
+fetchProducts();
+
+</script>
+
+</body>
+</html>

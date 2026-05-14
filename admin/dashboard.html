@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | DIGI JEWELRY STORE</title>
+
+<!-- GOOGLE FONTS -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<!-- CSS -->
+
+<link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+<!-- =========================================
+DASHBOARD
+========================================= -->
+
+<div class="dashboard">
+
+<!-- =========================================
+SIDEBAR
+========================================= -->
+
+<aside class="sidebar">
+
+    <!-- LOGO -->
+
+    <div class="sidebar-logo">
+
+        <img src="../images/digilogo.jpg" alt="Logo">
+
+        <h2>DIGI JEWELRY</h2>
+
+        <p>Admin Dashboard</p>
+
+    </div>
+
+    <!-- MENU -->
+
+    <nav class="sidebar-menu">
+
+        <a href="#" class="active">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            Dashboard
+
+        </a>
+
+        <a href="#productsSection">
+
+            <i class="fa-solid fa-box"></i>
+
+            Products
+
+        </a>
+
+        <a href="#ordersSection">
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            Orders
+
+        </a>
+
+        <a href="#analyticsSection">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            Analytics
+
+        </a>
+
+        <a href="#" id="logoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </a>
+
+    </nav>
+
+</aside>
+
+
+<!-- =========================================
+MAIN CONTENT
+========================================= -->
+
+<main class="main-content">
+
+<!-- =========================================
+TOPBAR
+========================================= -->
+
+<div class="topbar">
+
+    <div>
+
+        <h1>Luxury Store Management</h1>
+
+        <p>
+            Manage products, orders and analytics
+        </p>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products...">
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+ANALYTICS
+========================================= -->
+
+<section
+class="analytics-grid"
+id="analyticsSection">
+
+    <!-- CARD -->
+
+    <div class="analytics-card">
+
+        <div class="analytics-icon">
+
+            <i class="fa-solid fa-box"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="totalProducts">
+                0
+            </h3>
+
+            <p>Total Products</p>
+
+        </div>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="analytics-card">
+
+        <div class="analytics-icon featured">
+
+            <i class="fa-solid fa-star"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="featuredProducts">
+                0
+            </h3>
+
+            <p>Featured Products</p>
+
+        </div>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="analytics-card">
+
+        <div class="analytics-icon stock">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="inStockProducts">
+                0
+            </h3>
+
+            <p>Products In Stock</p>
+
+        </div>
+
+    </div>
+
+    <!-- CARD -->
+
+    <div class="analytics-card">
+
+        <div class="analytics-icon orders">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
+
+        <div>
+
+            <h3 id="totalOrders">
+                0
+            </h3>
+
+            <p>Total Orders</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+ADD PRODUCT FORM
+========================================= -->
+
+<section class="form-section">
+
+<div class="form-card">
+
+    <div class="section-title">
+
+        <h2>Add New Product</h2>
+
+        <p>
+            Upload premium luxury watch products
+        </p>
+
+    </div>
+
+    <!-- FORM -->
+
+    <form id="productForm">
+
+        <!-- GRID -->
+
+        <div class="grid-2">
+
+            <div class="input-group">
+
+                <label>Product Name</label>
+
+                <input
+                type="text"
+                id="name"
+                placeholder="Enter product name"
+                required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Brand Name</label>
+
+                <input
+                type="text"
+                id="brand"
+                placeholder="Enter brand"
+                required>
+
+            </div>
+
+        </div>
+
+        <!-- GRID -->
+
+        <div class="grid-2">
+
+            <div class="input-group">
+
+                <label>Price</label>
+
+                <input
+                type="number"
+                id="price"
+                placeholder="Enter price"
+                required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Category</label>
+
+                <input
+                type="text"
+                id="category"
+                placeholder="Enter category"
+                required>
+
+            </div>
+
+        </div>
+
+        <!-- DESCRIPTION -->
+
+        <div class="input-group">
+
+            <label>Description</label>
+
+            <textarea
+            id="description"
+            placeholder="Enter product description"
+            required></textarea>
+
+        </div>
+
+        <!-- TOGGLES -->
+
+        <div class="grid-2">
+
+            <!-- FEATURED -->
+
+            <div class="toggle-box">
+
+                <label>
+
+                    <input
+                    type="checkbox"
+                    id="featured">
+
+                    Featured Product
+
+                </label>
+
+            </div>
+
+            <!-- STOCK -->
+
+            <div class="toggle-box">
+
+                <label>
+
+                    <input
+                    type="checkbox"
+                    id="inStock"
+                    checked>
+
+                    In Stock
+
+                </label>
+
+            </div>
+
+        </div>
+
+        <!-- IMAGES -->
+
+        <div class="input-group">
+
+            <label>Upload Product Images</label>
+
+            <input
+            type="file"
+            id="images"
+            accept="image/*"
+            multiple
+            required>
+
+        </div>
+
+        <!-- IMAGE PREVIEW -->
+
+        <div id="previewContainer"
+        class="preview-container">
+
+        </div>
+
+        <!-- MESSAGE -->
+
+        <div id="formMessage"></div>
+
+        <!-- BUTTON -->
+
+        <button
+        type="submit"
+        id="submitBtn">
+
+            ADD PRODUCT
+
+        </button>
+
+    </form>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+PRODUCTS SECTION
+========================================= -->
+
+<section
+class="products-section"
+id="productsSection">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>All Products</h2>
+
+            <p>
+                Manage uploaded products
+            </p>
+
+        </div>
+
+        <!-- FILTER -->
+
+        <select id="brandFilter">
+
+            <option value="all">
+                All Brands
+            </option>
+
+        </select>
+
+    </div>
+
+    <!-- PRODUCTS GRID -->
+
+    <div
+    id="productsContainer"
+    class="products-grid">
+
+    </div>
+
+    <!-- PAGINATION -->
+
+    <div class="pagination">
+
+        <button id="prevPage">
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+        <span id="pageIndicator">
+            Page 1
+        </span>
+
+        <button id="nextPage">
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+ORDERS SECTION
+========================================= -->
+
+<section
+class="orders-section"
+id="ordersSection">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>Recent Orders</h2>
+
+            <p>
+                Manage customer orders
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- TABLE -->
+
+    <div class="orders-table-wrapper">
+
+        <table class="orders-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Customer</th>
+
+                    <th>Product</th>
+
+                    <th>Amount</th>
+
+                    <th>Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="ordersContainer">
+
+                <!-- DYNAMIC -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- =========================================
+EDIT PRODUCT MODAL
+========================================= -->
+
+<div class="modal" id="editModal">
+
+    <div class="modal-content">
+
+        <!-- CLOSE -->
+
+        <button
+        class="close-modal"
+        id="closeModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        <h2>Edit Product</h2>
+
+        <!-- FORM -->
+
+        <form id="editForm">
+
+            <input type="hidden" id="editId">
+
+            <!-- GRID -->
+
+            <div class="grid-2">
+
+                <div class="input-group">
+
+                    <label>Product Name</label>
+
+                    <input
+                    type="text"
+                    id="editName"
+                    required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Brand</label>
+
+                    <input
+                    type="text"
+                    id="editBrand"
+                    required>
+
+                </div>
+
+            </div>
+
+            <!-- GRID -->
+
+            <div class="grid-2">
+
+                <div class="input-group">
+
+                    <label>Price</label>
+
+                    <input
+                    type="number"
+                    id="editPrice"
+                    required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Category</label>
+
+                    <input
+                    type="text"
+                    id="editCategory"
+                    required>
+
+                </div>
+
+            </div>
+
+            <!-- DESCRIPTION -->
+
+            <div class="input-group">
+
+                <label>Description</label>
+
+                <textarea
+                id="editDescription"
+                required></textarea>
+
+            </div>
+
+            <!-- TOGGLES -->
+
+            <div class="grid-2">
+
+                <div class="toggle-box">
+
+                    <label>
+
+                        <input
+                        type="checkbox"
+                        id="editFeatured">
+
+                        Featured Product
+
+                    </label>
+
+                </div>
+
+                <div class="toggle-box">
+
+                    <label>
+
+                        <input
+                        type="checkbox"
+                        id="editStock">
+
+                        In Stock
+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- REPLACE IMAGES -->
+
+            <div class="input-group">
+
+                <label>Replace Images</label>
+
+                <input
+                type="file"
+                id="editImages"
+                accept="image/*"
+                multiple>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button
+            type="submit"
+            id="updateBtn">
+
+                UPDATE PRODUCT
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+SCRIPT
+========================================= -->
+
+<script type="module" src="dashboard.js"></script>
+
+</body>
+</html>

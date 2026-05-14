@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product | DIGI JEWELRY STORE</title>
+
+<meta name="description" content="Discover our exquisite collection of luxury watches at DIGI Jewelry Store. Explore timeless elegance and craftsmanship in every piece. Shop now for the perfect blend of style and sophistication.">
+<meta property="og:title" content="DIGI JEWELRY STORE">
+<meta property="og:description" content="Luxury wristwatches crafted for elegance and prestige.">
+<meta property="og:image" content="images/digilogo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================================
+RESET
+========================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#020817;
+color:white;
+overflow-x:hidden;
+}
+
+h1,h2,h3,h4{
+font-family:'Montserrat',sans-serif;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+/* =========================================
+CONTAINER
+========================================= */
+
+.container{
+width:90%;
+max-width:1300px;
+margin:auto;
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+header{
+width:100%; 
+border-bottom:1px solid rgba(255,255,255,0.08); 
+background:#041229; 
+position:sticky; 
+top:0; 
+z-index:1000; 
+backdrop-filter:blur(10px); 
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+height:52px;
+}
+
+.logo h2{
+font-size:28px;
+color:#0ea5e9;
+}
+
+.logo span{
+color:#f59e0b;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+position:relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+color:#f59e0b;
+}
+
+/* =========================================
+PRODUCT SECTION
+========================================= */
+
+.product-section{
+padding:80px 0;
+}
+
+.product-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:start;
+}
+
+/* =========================================
+GALLERY
+========================================= */
+
+.gallery-side{
+position:sticky;
+top:120px;
+}
+
+.main-image-box{
+background:linear-gradient(180deg,#08182f,#06111f);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:28px;
+overflow:hidden;
+padding:20px;
+position:relative;
+}
+
+.main-image{
+width:100%;
+height:650px;
+object-fit:cover;
+border-radius:20px;
+transition:0.4s;
+}
+
+.thumbnail-grid{
+display:flex;
+gap:15px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.thumb{
+width:95px;
+height:95px;
+border-radius:16px;
+overflow:hidden;
+cursor:pointer;
+border:2px solid transparent;
+transition:0.3s;
+background:#071526;
+}
+
+.thumb.active{
+border-color:#f59e0b;
+}
+
+.thumb img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* =========================================
+DETAILS
+========================================= */
+
+.product-brand{
+display:inline-block;
+background:rgba(245,158,11,0.12);
+color:#f59e0b;
+padding:10px 18px;
+border-radius:999px;
+font-size:13px;
+font-weight:600;
+margin-bottom:25px;
+}
+
+.product-title{
+font-size:clamp(42px,6vw,64px);
+line-height:1;
+margin-bottom:20px;
+}
+
+.product-price{
+font-size:52px;
+font-weight:700;
+color:#f59e0b;
+margin-bottom:25px;
+}
+
+.product-description{
+color:#cbd5e1;
+line-height:1.9;
+font-size:16px;
+margin-bottom:35px;
+}
+
+/* =========================================
+FEATURES
+========================================= */
+
+.product-features{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-bottom:40px;
+}
+
+.feature{
+background:#071526;
+border:1px solid rgba(255,255,255,0.08);
+padding:20px;
+border-radius:18px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.feature i{
+font-size:24px;
+color:#f59e0b;
+}
+
+.feature h4{
+font-size:15px;
+margin-bottom:4px;
+}
+
+.feature p{
+font-size:13px;
+color:#94a3b8;
+}
+
+/* =========================================
+PACKAGING
+========================================= */
+
+.packaging-box{
+background:#071526;
+border:1px solid rgba(255,255,255,0.08);
+padding:30px;
+border-radius:24px;
+margin-bottom:35px;
+}
+
+.packaging-box h3{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.pack-option{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px;
+border-radius:16px;
+background:#0b1a2e;
+margin-bottom:15px;
+cursor:pointer;
+border:1px solid transparent;
+transition:0.3s;
+}
+
+.pack-option:hover{
+border-color:#f59e0b;
+}
+
+.pack-option.active{
+border-color:#f59e0b;
+background:rgba(245,158,11,0.08);
+}
+
+.pack-left{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.pack-radio{
+width:18px;
+height:18px;
+border-radius:50%;
+border:2px solid #f59e0b;
+position:relative;
+}
+
+.pack-option.active .pack-radio::after{
+content:"";
+position:absolute;
+width:8px;
+height:8px;
+background:#f59e0b;
+border-radius:50%;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+.pack-name{
+font-weight:600;
+}
+
+.pack-price{
+color:#f59e0b;
+font-weight:600;
+}
+
+/* =========================================
+BUTTONS
+========================================= */
+
+.action-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.whatsapp-btn{
+flex:1;
+min-width:260px;
+background:#22c55e;
+padding:18px;
+border-radius:16px;
+text-align:center;
+text-decoration:none;
+color:white;
+font-weight:700;
+transition:0.3s;
+}
+
+.whatsapp-btn:hover{
+transform:translateY(-4px);
+background:#16a34a;
+}
+
+.back-btn{
+padding:18px 28px;
+border-radius:16px;
+background:#071526;
+border:1px solid rgba(255,255,255,0.08);
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
+}
+
+.back-btn:hover{
+border-color:#f59e0b;
+}
+
+/* =========================================
+RELATED PRODUCTS
+========================================= */
+
+.related-section{
+padding:100px 0;
+}
+
+.section-title{
+margin-bottom:50px;
+}
+
+.section-title p{
+color:#f59e0b;
+margin-bottom:12px;
+}
+
+.section-title h2{
+font-size:48px;
+}
+
+.related-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.related-card{
+background:#071526;
+border-radius:24px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.06);
+transition:0.4s;
+}
+
+.related-card:hover{
+transform:translateY(-10px);
+}
+
+.related-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.related-content{
+padding:24px;
+}
+
+.related-content h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.related-content p{
+color:#94a3b8;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.related-bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.related-price{
+font-size:28px;
+font-weight:700;
+color:#f59e0b;
+}
+
+.view-btn{
+background:#f59e0b;
+color:white;
+padding:12px 18px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* =========================================
+LOADING
+========================================= */
+
+.loading{
+text-align:center;
+padding:120px 0;
+font-size:22px;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer{
+padding:35px 0;
+background:#010611;
+border-top:1px solid rgba(255,255,255,0.08);
+margin-top:80px;
+}
+
+.footer-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.footer-text{
+color:#94a3b8;
+}
+
+/* =========================================
+RESPONSIVE
+========================================= */
+
+@media(max-width:991px){
+
+.product-wrapper{
+grid-template-columns:1fr;
+}
+
+.gallery-side{
+position:relative;
+top:0;
+}
+
+.main-image{
+height:500px;
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.product-title{
+font-size:42px;
+}
+
+.product-price{
+font-size:42px;
+}
+
+.product-features{
+grid-template-columns:1fr;
+}
+
+.main-image{
+height:400px;
+}
+
+.section-title h2{
+font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================================
+HEADER
+========================================= -->
+
+<header>
+
+<div class="container navbar">
+
+<div class="logo">
+
+<img src="images/digilogo.jpg" alt="DIGI Logo">
+
+<h2>DIGI JEWELRY <span>STORE</span></h2>
+
+</div>
+
+<div class="nav-links">
+
+        <a href="digi.html">HOME</a>
+        <a href="shop.html">SHOP</a>
+        <a href="about.html">ABOUT US </a>
+        <a href="contact.html">CONTACT</a>
+
+    </div>
+
+</div>
+
+</header>
+
+<!-- =========================================
+PRODUCT SECTION
+========================================= -->
+
+<section class="product-section">
+
+<div class="container">
+
+<div id="loading" class="loading">
+Loading luxury product...
+</div>
+
+<div id="productContainer"></div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+RELATED PRODUCTS
+========================================= -->
+
+<section class="related-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<p>MORE COLLECTIONS</p>
+
+<h2>Related Luxury Watches</h2>
+
+</div>
+
+<div id="relatedProducts" class="related-grid"></div>
+
+</div>
+
+</section>
+
+<!-- =========================================
+FOOTER
+========================================= -->
+
+<!-- =========================================
+FOOTER
+========================================= -->
+
+<footer>
+
+<div class="container footer-content">
+
+<div class="footer-logo">
+
+<img src="images/digilogo.jpg" alt="DIGI Logo">
+
+<h3>DIGI JEWELRY <span>STORE</span></h3>
+
+</div>
+
+<div class="footer-text">
+
+© 2026 DIGI JEWELRY STORE.
+All Rights Reserved.
+</div>
+
+<div class="socials">
+
+<a href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- =========================================
+FIREBASE + PRODUCT SYSTEM
+========================================= -->
+
+<script type="module">
+
+// =========================================
+// IMPORT FIREBASE
+// =========================================
+
+import { db }
+from "./js/firebase.js";
+
+import {
+doc,
+getDoc,
+collection,
+getDocs
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// =========================================
+// URL PARAMS
+// =========================================
+
+const params =
+new URLSearchParams(window.location.search);
+
+const productId =
+params.get("id");
+
+if(!productId){
+
+document.getElementById("loading").innerHTML =
+"Invalid product link.";
+
+throw new Error("Missing Product ID");
+
+}
+
+// =========================================
+// ELEMENTS
+// =========================================
+
+const productContainer =
+document.getElementById("productContainer");
+
+const relatedProducts =
+document.getElementById("relatedProducts");
+
+const loading =
+document.getElementById("loading");
+
+// =========================================
+// PACKAGING OPTIONS
+// =========================================
+
+const packagingOptions = [
+
+{
+name:"No Box",
+price:0
+},
+
+{
+name:"Basic Box",
+price:2500
+},
+
+{
+name:"Premium Box",
+price:8500
+},
+
+{
+name:"Executive Box",
+price:16000
+}
+
+];
+
+// =========================================
+// FETCH PRODUCT
+// =========================================
+
+async function fetchProduct(){
+
+try{
+
+const productRef =
+doc(db,"products",productId);
+
+const productSnap =
+await getDoc(productRef);
+
+if(!productSnap.exists()){
+
+loading.innerHTML =
+"Product not found.";
+
+return;
+
+}
+
+const product = productSnap.data();
+
+renderProduct(product);
+
+loading.style.display = "none";
+
+fetchRelatedProducts(product.brand);
+
+}catch(error){
+
+console.log(error);
+
+loading.innerHTML =
+"Error loading product.";
+
+}
+
+}
+
+// =========================================
+// RENDER PRODUCT
+// =========================================
+
+function renderProduct(product){
+
+let packagingHTML = "";
+
+packagingOptions.forEach((pack,index)=>{
+
+packagingHTML += `
+
+<div class="pack-option ${index === 0 ? 'active' : ''}"
+data-name="${pack.name}"
+data-price="${pack.price}">
+
+<div class="pack-left">
+
+<div class="pack-radio"></div>
+
+<div>
+
+<div class="pack-name">
+
+${pack.name}
+
+</div>
+
+</div>
+
+</div>
+
+<div class="pack-price">
+
++ ₦${pack.price.toLocaleString()}
+
+</div>
+
+</div>
+
+`;
+
+});
+
+productContainer.innerHTML = `
+
+<div class="product-wrapper">
+
+<!-- GALLERY -->
+
+<div class="gallery-side">
+
+<div class="main-image-box">
+
+<img
+src="${product.images[0]}"
+id="mainImage"
+class="main-image">
+
+</div>
+
+<div class="thumbnail-grid">
+
+${product.images.map((img,index)=>`
+
+<div class="thumb ${index===0?'active':''}">
+
+<img src="${img}">
+
+</div>
+
+`).join("")}
+
+</div>
+
+</div>
+
+<!-- DETAILS -->
+
+<div class="details-side">
+
+<div class="product-brand">
+
+${product.brand}
+
+</div>
+
+<h1 class="product-title">
+
+${product.name}
+
+</h1>
+
+<div class="product-price"
+id="productPrice">
+
+₦${Number(product.price).toLocaleString()}
+
+</div>
+
+<p class="product-description">
+
+${product.description}
+
+</p>
+
+<div class="product-features">
+
+<div class="feature">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<div>
+
+<h4>Premium Quality</h4>
+
+<p>Luxury craftsmanship</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<div>
+
+<h4>Fast Delivery</h4>
+
+<p>Nationwide shipping</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-lock"></i>
+
+<div>
+
+<h4>Secure Payment</h4>
+
+<p>Safe transactions</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<i class="fa-solid fa-gem"></i>
+
+<div>
+
+<h4>Luxury Design</h4>
+
+<p>Elegant appearance</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="packaging-box">
+
+<h3>Select Packaging</h3>
+
+${packagingHTML}
+
+</div>
+
+<div class="action-buttons">
+
+<a
+id="whatsappBtn"
+target="_blank"
+class="whatsapp-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+ORDER ON WHATSAPP
+
+</a>
+
+<a href="shop.html" class="back-btn"> BACK TO SHOP</a>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+initializeGallery();
+initializePackaging(product);
+
+}
+
+// =========================================
+// GALLERY SYSTEM
+// =========================================
+
+function initializeGallery(){
+
+const mainImage =
+document.getElementById("mainImage");
+
+const thumbs =
+document.querySelectorAll(".thumb");
+
+thumbs.forEach((thumb)=>{
+
+thumb.addEventListener("click",()=>{
+
+thumbs.forEach(t=>
+t.classList.remove("active")
+);
+
+thumb.classList.add("active");
+
+const img =
+thumb.querySelector("img").src;
+
+mainImage.src = img;
+
+});
+
+});
+
+}
+
+// =========================================
+// PACKAGING + PRICE
+// =========================================
+
+function initializePackaging(product){
+
+const packOptions =
+document.querySelectorAll(".pack-option");
+
+const priceEl =
+document.getElementById("productPrice");
+
+const whatsappBtn =
+document.getElementById("whatsappBtn");
+
+let currentPack =
+"No Box";
+
+let totalPrice =
+Number(product.price);
+
+updateWhatsapp();
+
+packOptions.forEach((option)=>{
+
+option.addEventListener("click",()=>{
+
+packOptions.forEach(opt=>
+opt.classList.remove("active")
+);
+
+option.classList.add("active");
+
+const extra =
+Number(option.dataset.price);
+
+currentPack =
+option.dataset.name;
+
+totalPrice =
+Number(product.price) + extra;
+
+priceEl.innerHTML =
+`₦${totalPrice.toLocaleString()}`;
+
+updateWhatsapp();
+
+});
+
+});
+
+function updateWhatsapp(){
+
+const message = `Hello, I want to order:
+
+*${product.name}*
+
+Brand: ${product.brand}
+
+Packaging: ${currentPack}
+
+Total Price: ₦${totalPrice.toLocaleString()}
+
+Please send delivery details.`;
+
+whatsappBtn.href =
+`https://wa.me/2347053364320?text=${encodeURIComponent(message)}`;
+
+}
+
+}
+
+// =========================================
+// RELATED PRODUCTS
+// =========================================
+
+async function fetchRelatedProducts(brand){
+
+const snapshot =
+await getDocs(collection(db,"products"));
+
+let relatedHTML = "";
+
+snapshot.forEach((doc)=>{
+
+const item = {
+
+id:doc.id,
+...doc.data()
+
+};
+
+if(
+item.brand === brand &&
+doc.id !== productId
+){
+
+relatedHTML += `
+
+<div class="related-card">
+
+<img src="${item.images[0]}">
+
+<div class="related-content">
+
+<h3>${item.name}</h3>
+
+<p>
+
+${item.description.substring(0,80)}...
+
+</p>
+
+<div class="related-bottom">
+
+<div class="related-price">
+
+₦${Number(item.price)
+.toLocaleString()}
+
+</div>
+
+<a
+href="product.html?id=${item.id}"
+class="view-btn">
+
+VIEW
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+});
+
+relatedProducts.innerHTML =
+relatedHTML;
+
+}
+
+// =========================================
+// START
+// =========================================
+
+fetchProduct();
+
+</script>
+
+</body>
+</html>

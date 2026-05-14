@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login - DIGI JEWELRY STORE</title>
+
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="admin-login.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+LOGIN CONTAINER
+========================= -->
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <!-- FIXED IMAGE PATH -->
+            <img src="../images/digilogo.png" alt="DIGI JEWELRY STORE Logo">
+
+            <h1>DIGI JEWELRY STORE</h1>
+
+            <p>Admin Control Panel</p>
+
+        </div>
+
+        <!-- LOGIN FORM -->
+
+        <form id="loginForm">
+
+            <div class="input-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                type="email"
+                id="email"
+                placeholder="Enter admin email"
+                autocomplete="email"
+                required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required>
+
+            </div>
+
+            <!-- LOGIN BUTTON -->
+
+            <button type="submit" id="loginBtn">
+
+                LOGIN TO DASHBOARD
+
+            </button>
+
+            <!-- MESSAGE AREA -->
+
+            <div id="message"></div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- JS -->
+<script type="module" src="admin-login.js"></script>
+
+</body>
+</html>
