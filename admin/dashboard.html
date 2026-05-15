@@ -47,7 +47,11 @@ SIDEBAR
 
         <img src="../images/digilogo.jpg" alt="Logo">
 
-        <h2>DIGI JEWELRY</h2>
+        <h2>
+            <span class="digi">DIGI</span>
+            <span class="jewelry">JEWELRY</span>
+            <span class="store">STORE</span>
+        </h2>
 
         <p>Admin Dashboard</p>
 
@@ -68,33 +72,25 @@ SIDEBAR
         <a href="#productsSection">
 
             <i class="fa-solid fa-box"></i>
-
             Products
-
         </a>
 
         <a href="#ordersSection">
 
             <i class="fa-solid fa-bag-shopping"></i>
-
             Orders
-
         </a>
 
         <a href="#analyticsSection">
 
             <i class="fa-solid fa-chart-pie"></i>
-
             Analytics
-
         </a>
 
-        <a href="#" id="logoutBtn">
+        <a href="admin-login.html" id="logoutBtn">
 
             <i class="fa-solid fa-right-from-bracket"></i>
-
             Logout
-
         </a>
 
     </nav>
@@ -543,6 +539,32 @@ id="ordersSection">
 
 </div>
 
+<!-- ========================================
+REVIEWS SECTION
+======================================== -->
+
+<div class="dashboard-section">
+
+<div class="section-header">
+
+<h2>Pending Reviews</h2>
+
+</div>
+
+<div
+id="reviewsContainer"
+class="reviews-admin-grid">
+
+<div class="loading-box">
+
+Loading reviews...
+
+</div>
+
+</div>
+
+</div>
+
 
 <!-- =========================================
 EDIT PRODUCT MODAL
@@ -690,11 +712,7 @@ EDIT PRODUCT MODAL
 
             <button
             type="submit"
-            id="updateBtn">
-
-                UPDATE PRODUCT
-
-            </button>
+            id="updateBtn">UPDATE PRODUCT</button>
 
         </form>
 

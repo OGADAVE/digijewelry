@@ -26,31 +26,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <style>
 
-/* =========================================
-RESET
-========================================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#020817;
-color:white;
-overflow-x:hidden;
-}
-
-h1,h2,h3,h4{
-font-family:'Montserrat',sans-serif;
-}
-
 img{
 max-width:100%;
 display:block;
@@ -64,65 +39,6 @@ CONTAINER
 width:90%;
 max-width:1300px;
 margin:auto;
-}
-
-/* =========================================
-HEADER
-========================================= */
-
-header{
-width:100%; 
-border-bottom:1px solid rgba(255,255,255,0.08); 
-background:#041229; 
-position:sticky; 
-top:0; 
-z-index:1000; 
-backdrop-filter:blur(10px); 
-}
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 0;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.logo img{
-height:52px;
-}
-
-.logo h2{
-font-size:28px;
-color:#0ea5e9;
-}
-
-.logo span{
-color:#f59e0b;
-}
-
-.nav-links{
-display:flex;
-align-items:center;
-gap:35px;
-}
-
-.nav-links a{
-text-decoration:none;
-color:white;
-font-weight:500;
-transition:0.3s;
-position:relative;
-}
-
-.nav-links a:hover,
-.nav-links a.active{
-color:#f59e0b;
 }
 
 /* =========================================
@@ -474,29 +390,6 @@ font-size:22px;
 }
 
 /* =========================================
-FOOTER
-========================================= */
-
-footer{
-padding:35px 0;
-background:#010611;
-border-top:1px solid rgba(255,255,255,0.08);
-margin-top:80px;
-}
-
-.footer-content{
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:20px;
-}
-
-.footer-text{
-color:#94a3b8;
-}
-
-/* =========================================
 RESPONSIVE
 ========================================= */
 
@@ -518,17 +411,6 @@ height:500px;
 }
 
 @media(max-width:768px){
-
-.navbar{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.nav-links{
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
 
 .product-title{
 font-size:42px;
@@ -570,7 +452,11 @@ HEADER
 
 <img src="images/digilogo.jpg" alt="DIGI Logo">
 
-<h2>DIGI JEWELRY <span>STORE</span></h2>
+<h2>
+            <span class="digi">DIGI</span>
+            <span class="jewelry">JEWELRY</span>
+            <span class="store">STORE</span>
+        </h2>
 
 </div>
 
@@ -582,7 +468,6 @@ HEADER
         <a href="contact.html">CONTACT</a>
 
     </div>
-
 </div>
 
 </header>
@@ -628,8 +513,99 @@ RELATED PRODUCTS
 </section>
 
 <!-- =========================================
-FOOTER
+PRODUCT REVIEWS
 ========================================= -->
+
+<section class="related-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<p>CUSTOMER REVIEWS</p>
+
+<h2>What Buyers Say</h2>
+
+</div>
+
+<!-- REVIEWS GRID -->
+
+<div
+id="reviewsGrid"
+class="reviews-grid">
+
+<div class="loading">
+Loading reviews...
+</div>
+
+</div>
+
+<!-- REVIEW FORM -->
+
+<div class="review-form-box">
+
+<h3>Leave a Review</h3>
+
+<form id="reviewForm">
+
+<input
+type="text"
+id="reviewName"
+placeholder="Your Name"
+required>
+
+<select
+id="reviewRating"
+required>
+
+<option value="">
+Select Rating
+</option>
+
+<option value="5">
+⭐⭐⭐⭐⭐
+</option>
+
+<option value="4">
+⭐⭐⭐⭐
+</option>
+
+<option value="3">
+⭐⭐⭐
+</option>
+
+<option value="2">
+⭐⭐
+</option>
+
+<option value="1">
+⭐
+</option>
+
+</select>
+
+<textarea
+id="reviewMessage"
+placeholder="Write your review..."
+required></textarea>
+
+<button
+type="submit"
+id="reviewBtn">
+
+SUBMIT REVIEW
+
+</button>
+
+<div id="reviewFeedback"></div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- =========================================
 FOOTER
@@ -643,7 +619,11 @@ FOOTER
 
 <img src="images/digilogo.jpg" alt="DIGI Logo">
 
-<h3>DIGI JEWELRY <span>STORE</span></h3>
+<h2>
+    <span class="digi">DIGI</span>
+    <span class="jewelry">JEWELRY</span>
+    <span class="store">STORE</span>
+</h2>
 
 </div>
 
@@ -653,18 +633,28 @@ FOOTER
 All Rights Reserved.
 </div>
 
+<!-- SOCIALS -->
+
 <div class="socials">
 
-<a href="#">
-<i class="fa-brands fa-facebook-f"></i>
-</a>
+    <a href="https://www.facebook.com/share/1Ac2vuKgZE/" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-<a href="#">
-<i class="fa-brands fa-instagram"></i>
-</a>
+    <a href="https://www.instagram.com/digijewelrystore/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
 
-<a href="#">
-<i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/2347053364320" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <a href="mailto:digijewelrystore@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@digijewelrystore" target="_blank">
+    <i class="fa-brands fa-tiktok"></i>
 </a>
 
 </div>
@@ -690,7 +680,13 @@ import {
 doc,
 getDoc,
 collection,
-getDocs
+getDocs,
+addDoc,
+serverTimestamp,
+query,
+where,
+orderBy,
+onSnapshot
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -1183,6 +1179,204 @@ relatedHTML;
 // =========================================
 
 fetchProduct();
+
+// =========================================
+// PRODUCT REVIEWS
+// =========================================
+
+const reviewForm =
+document.getElementById("reviewForm");
+
+const reviewsGrid =
+document.getElementById("reviewsGrid");
+
+const reviewBtn =
+document.getElementById("reviewBtn");
+
+const reviewFeedback =
+document.getElementById("reviewFeedback");
+
+// =========================================
+// LOAD REVIEWS
+// =========================================
+
+function loadReviews(){
+
+const q = query(
+collection(db,"reviews"),
+where("productId","==",productId),
+where("approved","==",true),
+orderBy("createdAt","desc")
+);
+
+onSnapshot(q,(snapshot)=>{
+
+reviewsGrid.innerHTML = "";
+
+if(snapshot.empty){
+
+reviewsGrid.innerHTML = `
+
+<div class="review-card">
+
+<p>
+No reviews yet for this product.
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+snapshot.forEach((doc)=>{
+
+const review = doc.data();
+
+let stars = "";
+
+for(let i=0;i<review.rating;i++){
+
+stars += `
+<i class="fa-solid fa-star"></i>
+`;
+
+}
+
+reviewsGrid.innerHTML += `
+
+<div class="review-card">
+
+<div class="stars">
+
+${stars}
+
+</div>
+
+<p class="review-text">
+
+"${review.message}"
+
+</p>
+
+<div class="review-user">
+
+<h4>${review.name}</h4>
+
+<span>
+Verified Buyer
+</span>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+});
+
+}
+
+loadReviews();
+
+// =========================================
+// SUBMIT REVIEW
+// =========================================
+
+reviewForm.addEventListener(
+"submit",
+async(e)=>{
+
+e.preventDefault();
+
+const name =
+document.getElementById("reviewName")
+.value.trim();
+
+const rating =
+Number(
+document.getElementById("reviewRating")
+.value
+);
+
+const message =
+document.getElementById("reviewMessage")
+.value.trim();
+
+reviewBtn.innerHTML =
+"SUBMITTING...";
+
+reviewBtn.disabled = true;
+
+try{
+
+const productTitle =
+document.querySelector(".product-title")
+?.innerText || "";
+
+await addDoc(
+collection(db,"reviews"),
+{
+
+productId,
+productName:productTitle,
+
+name,
+rating,
+message,
+
+approved:false,
+
+createdAt:
+serverTimestamp()
+
+}
+);
+
+reviewFeedback.innerHTML = `
+
+<div style="color:#22c55e;text-align:center;margin-top:15px;">
+
+Review submitted successfully.
+Awaiting approval.
+
+</div>
+
+`;
+
+reviewForm.reset();
+
+reviewBtn.innerHTML =
+"SUBMIT REVIEW";
+
+reviewBtn.disabled = false;
+
+}catch(error){
+
+console.log(error);
+
+reviewFeedback.innerHTML = `
+
+<div style="color:#ef4444;text-align:center;margin-top:15px;">
+
+Failed to submit review.
+
+</div>
+
+`;
+
+reviewBtn.innerHTML =
+"SUBMIT REVIEW";
+
+reviewBtn.disabled = false;
+
+}
+
+});
 
 </script>
 

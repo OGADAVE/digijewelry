@@ -46,7 +46,9 @@ HEADER
         alt="DIGI JEWELRY STORE Logo">
 
         <h2>
-            DIGI JEWELRY <span>STORE</span>
+            <span class="digi">DIGI</span>
+            <span class="jewelry">JEWELRY</span>
+            <span class="store">STORE</span>
         </h2>
 
     </div>
@@ -59,7 +61,7 @@ HEADER
 
         <a href="shop.html">SHOP</a>
 
-        <a href="about.html">ABOUT US </a>
+        <a href="about.html">ABOUT</a>
 
         <a href="contact.html">CONTACT</a>
 
@@ -637,6 +639,190 @@ WRISTWATCH ORGANIZER
 
 </section>
 
+<!-- =========================================
+CUSTOMER REVIEWS
+========================================= -->
+
+<section class="section reviews-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<p>CUSTOMER TESTIMONIALS</p>
+
+<h2>What Our Clients Say</h2>
+
+</div>
+
+<!-- LIVE REVIEWS -->
+ <div
+ id="reviewsGrid" class="reviews-grid">
+ <div class="loading-reviews">
+
+Loading reviews...
+
+</div>
+</div>
+
+<!-- REVIEW FORM -->
+
+<div class="review-form-box">
+
+<h3>Leave a Review</h3>
+
+<form id="reviewForm">
+
+<input
+type="text"
+id="reviewName"
+placeholder="Your Name"
+required>
+<select
+id="reviewRating"
+required>
+
+<option value="">
+Select Rating
+</option>
+
+<option value="5">
+⭐⭐⭐⭐⭐
+</option>
+
+<option value="4">
+⭐⭐⭐⭐
+</option>
+
+<option value="3">
+⭐⭐⭐
+</option>
+
+<option value="2">
+⭐⭐
+</option>
+
+<option value="1">
+⭐
+</option>
+
+</select>
+
+<textarea
+id="reviewMessage"
+placeholder="Write your review..."
+required></textarea>
+
+<button type="submit"
+id="reviewBtn">SUBMIT REVIEW</button>
+
+<div id="reviewFeedback"></div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- REVIEWS GRID -->
+
+<div class="reviews-grid">
+
+<!-- REVIEW -->
+
+<div class="review-card">
+
+<div class="stars">
+
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+
+</div>
+
+<p class="review-text">
+
+"Absolutely premium quality. The packaging and delivery exceeded my expectations."
+
+</p>
+
+<div class="review-user">
+
+<h4>Daniel E.</h4>
+
+<span>Abuja</span>
+
+</div>
+
+</div>
+
+<!-- REVIEW -->
+
+<div class="review-card">
+
+<div class="stars">
+
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+
+</div>
+
+<p class="review-text">
+
+"Luxury feel at an affordable price. Definitely buying again."
+
+</p>
+
+<div class="review-user">
+
+<h4>Michael A.</h4>
+
+<span>Lagos</span>
+
+</div>
+
+</div>
+
+<!-- REVIEW -->
+
+<div class="review-card">
+
+<div class="stars">
+
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+
+</div>
+
+<p class="review-text">
+
+"The watch looked even better in real life. Fast delivery too."
+
+</p>
+
+<div class="review-user">
+
+<h4>Samuel K.</h4>
+
+<span>Port Harcourt</span>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
 
 <!-- =========================================
 CTA SECTION
@@ -691,9 +877,11 @@ FOOTER
         src="images/digilogo.jpg"
         alt="DIGI Logo">
 
-        <h3>
-            DIGI JEWELRY <span>STORE</span>
-        </h3>
+    <h3>
+    <span class="digi">DIGI</span>
+    <span class="jewelry">JEWELRY</span>
+    <span class="store">STORE</span>
+</h3>
 
     </div>
 
@@ -708,36 +896,33 @@ FOOTER
 
     <!-- SOCIALS -->
 
-    <div class="socials">
+<div class="socials">
 
-        <a href="#">
+    <a href="https://www.facebook.com/share/1Ac2vuKgZE/" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-            <i class="fa-brands fa-facebook-f"></i>
+    <a href="https://www.instagram.com/digijewelrystore/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
 
-        </a>
+    <a href="https://wa.me/2347053364320" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-        <a href="#">
+    <a href="mailto:digijewelrystore@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
 
-            <i class="fa-brands fa-instagram"></i>
+    <a href="https://www.tiktok.com/@digijewelrystore" target="_blank">
+    <i class="fa-brands fa-tiktok"></i>
+</a>
 
-        </a>
-
-        <a href="https://wa.me/2347053364320">
-
-            <i class="fa-brands fa-whatsapp"></i>
-
-        </a>
-
-    </div>
+</div>
 
 </div>
 
 </footer>
-
-
-<!-- =========================================
-FIREBASE PRODUCTS SCRIPT
-========================================= -->
 
 <script type="module">
 
@@ -751,9 +936,12 @@ from "./js/firebase.js";
 import {
 collection,
 getDocs,
+addDoc,
+serverTimestamp,
 query,
 limit,
-orderBy
+orderBy,
+onSnapshot
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -765,6 +953,17 @@ from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const featuredProducts =
 document.getElementById("featuredProducts");
 
+const reviewsGrid =
+document.getElementById("reviewsGrid");
+
+const reviewForm =
+document.getElementById("reviewForm");
+
+const reviewBtn =
+document.getElementById("reviewBtn");
+
+const reviewFeedback =
+document.getElementById("reviewFeedback");
 
 // =========================================
 // FETCH PRODUCTS
@@ -909,6 +1108,172 @@ Please try again later.
 
 }
 
+// =========================================
+// FETCH REVIEWS
+// =========================================
+
+const reviewsQuery = query(
+collection(db,"reviews"),
+orderBy("createdAt","desc")
+);
+
+onSnapshot(reviewsQuery,(snapshot)=>{
+
+reviewsGrid.innerHTML = "";
+
+if(snapshot.empty){
+
+reviewsGrid.innerHTML = `
+
+<div class="review-card">
+
+<p>No reviews yet.
+Be the first customer to review.
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+snapshot.forEach((doc)=>{
+
+const review = doc.data();
+
+if(review.approved !== true) return;
+
+let stars = "";
+
+for(let i=0;i<review.rating;i++){
+
+stars += `
+<i class="fa-solid fa-star"></i>
+`;
+
+}
+
+reviewsGrid.innerHTML += `
+
+<div class="review-card">
+
+<div class="stars">
+
+${stars}
+
+</div>
+
+<p class="review-text">
+
+"${review.message}"
+
+</p>
+
+<div class="review-user">
+
+<h4>${review.name}</h4>
+
+<span>
+Verified Customer
+</span>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+});
+
+// =========================================
+// SUBMIT REVIEW
+// =========================================
+
+reviewForm.addEventListener(
+"submit",
+async(e)=>{
+
+e.preventDefault();
+
+const name =
+document.getElementById("reviewName")
+.value.trim();
+
+const rating =
+Number(
+document.getElementById("reviewRating")
+.value
+);
+
+const message =
+document.getElementById("reviewMessage")
+.value.trim();
+
+reviewBtn.innerHTML =
+"SUBMITTING...";
+
+reviewBtn.disabled = true;
+
+try{
+
+await addDoc(
+collection(db,"reviews"),
+{
+
+name,
+rating,
+message,
+
+approved:true,
+
+createdAt:
+serverTimestamp()
+
+}
+);
+
+reviewFeedback.innerHTML = `
+
+<div class="review-feedback-success">
+
+Review submitted successfully.
+
+</div>
+
+`;
+
+reviewForm.reset();
+
+reviewBtn.innerHTML =
+"SUBMIT REVIEW";
+
+reviewBtn.disabled = false;
+
+}catch(error){
+
+console.log(error);
+
+reviewFeedback.innerHTML = `
+
+<div class="review-feedback-error">
+
+Failed to submit review.
+
+</div>
+
+`;
+
+reviewBtn.innerHTML =
+"SUBMIT REVIEW";
+reviewBtn.disabled = false;
+
+}
+
+});
 
 // =========================================
 // INITIALIZE

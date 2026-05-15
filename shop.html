@@ -30,92 +30,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <style>
 
-/* =========================================
-GLOBAL
-========================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:#020817;
-    color:white;
-    overflow-x:hidden;
-}
-
-.container{
-    width:90%;
-    max-width:1250px;
-    margin:auto;
-}
-
-h1,h2,h3,h4{
-    font-family:'Montserrat',sans-serif;
-}
-
-/* =========================================
-HEADER
-========================================= */
-
-header{
-    width:100%;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    background:#041229;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    backdrop-filter:blur(10px);
-}
-
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo img{
-    height:52px;
-}
-
-.logo h2{
-    font-size:28px;
-    color:#0ea5e9;
-}
-
-.logo span{
-    color:#f59e0b;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:35px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:white;
-    font-weight:500;
-    position:relative;
-    transition:0.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active{
-    color:#f59e0b;
-}
-
 .order-btn{
     background:#f59e0b;
     color:white;
@@ -421,74 +335,6 @@ EMPTY STATES
 }
 
 /* =========================================
-FOOTER
-========================================= */
-
-footer{
-    padding:35px 0;
-    background:#010611;
-    border-top:1px solid rgba(255,255,255,0.08);
-}
-
-.footer-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.footer-logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.footer-logo img{
-    height:45px;
-}
-
-.footer-logo h3{
-    color:#0ea5e9;
-}
-
-.footer-logo span{
-    color:#f59e0b;
-}
-
-.footer-text{
-    color:#94a3b8;
-}
-
-.socials{
-    display:flex;
-    gap:15px;
-}
-
-.socials a{
-    width:44px;
-    height:44px;
-
-    border-radius:50%;
-
-    background:#071526;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:white;
-    text-decoration:none;
-
-    transition:0.3s;
-}
-
-.socials a:hover{
-    background:#f59e0b;
-    transform:translateY(-4px);
-}
-
-/* =========================================
 RESPONSIVE
 ========================================= */
 
@@ -547,8 +393,11 @@ HEADER
 
 <img src="images/digilogo.jpg" alt="DIGI Logo">
 
-<h2>DIGI <span>JEWELRY STORE</span></h2>
-
+<h2>
+            <span class="digi">DIGI</span>
+            <span class="jewelry">JEWELRY</span>
+            <span class="store">STORE</span>
+        </h2>
 </div>
 
 <div class="nav-links">
@@ -730,7 +579,11 @@ FOOTER
 
 <img src="images/digilogo.jpg" alt="DIGI Logo">
 
-<h3>DIGI JEWELRY <span>STORE</span></h3>
+<h3>
+    <span class="digi">DIGI</span>
+    <span class="jewelry">JEWELRY</span>
+    <span class="store">STORE</span>
+</h3>
 
 </div>
 
@@ -743,20 +596,29 @@ All Rights Reserved.
 
 <div class="socials">
 
-<a href="#">
-<i class="fa-brands fa-facebook-f"></i>
-</a>
+<!-- SOCIALS -->
 
-<a href="#">
-<i class="fa-brands fa-instagram"></i>
-</a>
+    <a href="https://www.facebook.com/share/1Ac2vuKgZE/" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-<a href="#">
-<i class="fa-brands fa-whatsapp"></i>
+    <a href="https://www.instagram.com/digijewelrystore/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://wa.me/2347053364320" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <a href="mailto:digijewelrystore@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@digijewelrystore" target="_blank">
+    <i class="fa-brands fa-tiktok"></i>
 </a>
 
 </div>
-
 </div>
 
 </footer>

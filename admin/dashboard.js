@@ -11,11 +11,12 @@ addDoc,
 getDocs,
 deleteDoc,
 doc,
-updateDoc,
 serverTimestamp,
 query,
 orderBy,
-onSnapshot
+updateDoc,
+onSnapshot,
+where
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -571,7 +572,9 @@ ${product.description.substring(0,90)}...
 class="edit-btn"
 data-id="${product.id}">
 
-EDIT
+<i class="fa-solid fa-pen"></i>
+
+Edit
 
 </button>
 
@@ -579,7 +582,9 @@ EDIT
 class="delete-btn"
 data-id="${product.id}">
 
-DELETE
+<i class="fa-solid fa-trash"></i>
+
+Delete
 
 </button>
 
@@ -588,7 +593,6 @@ DELETE
 </div>
 
 </div>
-
 `;
 
 });
@@ -963,58 +967,96 @@ updateBtn.disabled = false;
 
 
 // =========================================
-// MOCK ORDERS SYSTEM
+// ORDERS SYSTEM
 // =========================================
 
 const ordersContainer =
 document.getElementById("ordersContainer");
 
-function loadOrders(){
+// =========================================
+// LOAD ORDERS
+// =========================================
+
+async function loadOrders(){
+
+try{
+
+const q = query(
+collection(db,"orders"),
+orderBy("createdAt","desc")
+);
+
+const snapshot =
+await getDocs(q);
+
+ordersContainer.innerHTML = "";
+
+
+// =========================================
+// EMPTY STATE
+// =========================================
+
+if(snapshot.empty){
 
 ordersContainer.innerHTML = `
 
 <tr>
 
-<td>John Doe</td>
+<td colspan="5"
+class="empty-orders">
 
-<td>Rolex Gold Edition</td>
-
-<td>₦320,000</td>
-
-<td>
-
-<span class="status pending">
-Pending
-</span>
-
-</td>
-
-<td>
-
-<a
-href="https://wa.me/234000000000"
-target="_blank">
-
-Contact
-
-</a>
+No orders yet.
 
 </td>
 
 </tr>
 
+`;
+
+totalOrdersEl.innerHTML = 0;
+
+return;
+
+}
+
+
+// =========================================
+// RENDER ORDERS
+// =========================================
+
+snapshot.forEach((docSnap)=>{
+
+const order = docSnap.data();
+
+ordersContainer.innerHTML += `
+
 <tr>
-
-<td>David Smith</td>
-
-<td>Patek Philippe</td>
-
-<td>₦450,000</td>
 
 <td>
 
-<span class="status delivered">
-Delivered
+${order.customerName || "N/A"}
+
+</td>
+
+<td>
+
+${order.productName || "N/A"}
+
+</td>
+
+<td>
+
+₦${Number(order.total || 0)
+.toLocaleString()}
+
+</td>
+
+<td>
+
+<span class="status ${order.status || 'pending'}">
+
+${order.status || "Pending"}
+
 </span>
 
 </td>
@@ -1022,7 +1064,7 @@ Delivered
 <td>
 
 <a
-href="https://wa.me/234000000000"
+href="https://wa.me/${order.phone}"
 target="_blank">
 
 Contact
@@ -1035,8 +1077,249 @@ Contact
 
 `;
 
-totalOrdersEl.innerHTML = 2;
+});
+
+
+// =========================================
+// TOTAL ORDERS
+// =========================================
+
+totalOrdersEl.innerHTML =
+snapshot.size;
+
+}catch(error){
+
+console.log(error);
+
+ordersContainer.innerHTML = `
+
+<tr>
+
+<td colspan="5"
+class="empty-orders">
+
+No orders yet.
+
+</td>
+
+</tr>
+
+`;
 
 }
 
+}
+
+// =========================================
+// INITIALIZE
+// =========================================
+
 loadOrders();
+
+// ========================================
+// REVIEWS SYSTEM
+// ========================================
+
+const reviewsContainer =
+document.getElementById("reviewsContainer");
+
+// ========================================
+// LOAD PENDING REVIEWS
+// ========================================
+
+function loadPendingReviews(){
+
+const q = query(
+collection(db,"reviews"),
+where("approved","==",false),
+orderBy("createdAt","desc")
+);
+
+onSnapshot(q,(snapshot)=>{
+
+reviewsContainer.innerHTML = "";
+
+if(snapshot.empty){
+
+reviewsContainer.innerHTML = `
+
+<div class="loading-box">
+
+No pending reviews.
+
+</div>
+
+`;
+
+return;
+
+}
+
+snapshot.forEach((docSnap)=>{
+
+const review = docSnap.data();
+
+const reviewId = docSnap.id;
+
+let stars = "";
+
+for(let i=0;i<review.rating;i++){
+
+stars += `
+<i class="fa-solid fa-star"></i>
+`;
+
+}
+
+reviewsContainer.innerHTML += `
+
+<div class="review-admin-card">
+
+<div class="review-stars">
+
+${stars}
+
+</div>
+
+<h3>
+
+${review.name}
+
+</h3>
+
+<div class="review-product">
+
+Product:
+${review.productName}
+
+</div>
+
+<p class="review-message">
+
+"${review.message}"
+
+</p>
+
+<div class="review-admin-buttons">
+
+<button
+class="approve-btn"
+data-id="${reviewId}">
+
+APPROVE
+
+</button>
+
+<button
+class="delete-review-btn"
+data-id="${reviewId}">
+
+DELETE
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+// ========================================
+// APPROVE EVENTS
+// ========================================
+
+const approveButtons =
+document.querySelectorAll(".approve-btn");
+
+approveButtons.forEach((button)=>{
+
+button.addEventListener("click",()=>{
+
+approveReview(
+button.dataset.id
+);
+
+});
+
+});
+
+
+// ========================================
+// DELETE EVENTS
+// ========================================
+
+const deleteReviewButtons =
+document.querySelectorAll(".delete-review-btn");
+
+deleteReviewButtons.forEach((button)=>{
+
+button.addEventListener("click",()=>{
+
+deleteReview(
+button.dataset.id
+);
+
+});
+
+});
+
+});
+
+}
+
+loadPendingReviews();
+
+// ========================================
+// APPROVE REVIEW
+// ========================================
+
+async function approveReview(id){
+
+try{
+
+await updateDoc(
+doc(db,"reviews",id),
+{
+approved:true
+}
+);
+
+}catch(error){
+
+console.log(error);
+
+alert(error.message);
+
+}
+
+}
+
+// ========================================
+// DELETE REVIEW
+// ========================================
+
+async function deleteReview(id){
+
+const confirmDelete =
+confirm("Delete this review?");
+
+if(!confirmDelete) return;
+
+try{
+
+await deleteDoc(
+doc(db,"reviews",id)
+);
+
+}catch(error){
+
+console.log(error);
+
+alert(error.message);
+
+}
+
+}

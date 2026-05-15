@@ -177,65 +177,8 @@ color:white;
 font-weight:700;
 }
 
-footer{
-padding:35px 0;
-background:#010611;
-border-top:1px solid rgba(255,255,255,0.08);
-}
-
-.footer-content{
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:20px;
-}
-
-.footer-logo{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.footer-logo img{
-height:50px;
-}
-
-.footer-logo h3{
-font-family:'Montserrat',sans-serif;
-font-size:24px;
-color:#0ea5e9;
-}
-
-.footer-logo span{
-color:#f59e0b;
-}
-
-.footer-text{
-color:#94a3b8;
-}
-
-.socials{
-display:flex;
-gap:15px;
-}
-
-.socials a{
-width:45px;
-height:45px;
-border-radius:50%;
-background:#071526;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-text-decoration:none;
-transition:0.3s;
-}
-
-.socials a:hover{
-background:#f59e0b;
-transform:translateY(-4px);
+.whatsapp-box a:hover{
+transform:translateY(-3px);
 }
 
 /* RESPONSIVE */
@@ -259,11 +202,6 @@ font-size:48px;
 font-size:34px;
 }
 
-.footer-content{
-flex-direction:column;
-text-align:center;
-}
-
 }
 
 </style>
@@ -283,9 +221,10 @@ text-align:center;
 <img src="images/digilogo.jpg" alt="DIGI Logo">
 
 <h2>
-DIGI JEWELRY <span>STORE</span>
-</h2>
-
+            <span class="digi">DIGI</span>
+            <span class="jewelry">JEWELRY</span>
+            <span class="store">STORE</span>
+        </h2>
 </div>
 
 <div class="nav-links">
@@ -541,8 +480,10 @@ FOOTER
         alt="DIGI Logo">
 
         <h3>
-            DIGI JEWELRY <span>STORE</span>
-        </h3>
+    <span class="digi">DIGI</span>
+    <span class="jewelry">JEWELRY</span>
+    <span class="store">STORE</span>
+</h3>
 
     </div>
 
@@ -557,28 +498,29 @@ FOOTER
 
     <!-- SOCIALS -->
 
-    <div class="socials">
+<div class="socials">
 
-        <a href="#">
+    <a href="https://www.facebook.com/share/1Ac2vuKgZE/" target="_blank">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-            <i class="fa-brands fa-facebook-f"></i>
+    <a href="https://www.instagram.com/digijewelrystore/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
 
-        </a>
+    <a href="https://wa.me/2347053364320" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-        <a href="#">
+    <a href="mailto:digijewelrystore@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
 
-            <i class="fa-brands fa-instagram"></i>
+    <a href="https://www.tiktok.com/@digijewelrystore" target="_blank">
+    <i class="fa-brands fa-tiktok"></i>
+</a>
 
-        </a>
-
-        <a href="https://wa.me/2347053364320">
-
-            <i class="fa-brands fa-whatsapp"></i>
-
-        </a>
-
-    </div>
-
+</div>
 </div>
 
 </footer>
